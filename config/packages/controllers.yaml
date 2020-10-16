@@ -1,0 +1,5 @@
+services:
+  app.controllers.default:
+    class: App\Controller\DefaultController
+    arguments:
+      - '@app.services.race'

@@ -1,0 +1,19 @@
+services:
+  app.helpers.generate_horse_stat:
+    class: App\Helpers\GenerateHorseStatHelper
+
+  app.helpers.speed_calculator:
+    class: App\Helpers\SpeedCalculatorHelper
+
+  app.helpers.strength_calculator:
+    class: App\Helpers\StrengthCalculatorHelper
+
+  app.helpers.endurance_calculator:
+    class: App\Helpers\EnduranceCalculatorHelper
+
+  app.helpers.time_calculator:
+    class: App\Helpers\TimeCalculatorHelper
+    arguments:
+      - '@app.helpers.speed_calculator'
+      - '@app.helpers.strength_calculator'
+      - '@app.helpers.endurance_calculator'

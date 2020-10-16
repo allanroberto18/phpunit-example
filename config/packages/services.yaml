@@ -1,0 +1,15 @@
+services:
+  app.services.horse_race_detail:
+    class: App\Services\HorseRaceDetailService
+    arguments:
+      - '@app.helpers.time_calculator'
+      - '@app.repository.horse'
+
+  app.services.race:
+    class: App\Services\RaceService
+    public: true
+    arguments:
+      - '@app.services.horse_race_detail'
+      - '@app.factories.horse'
+      - '@app.repository.horse_race_detail'
+      - '@app.repository.race'

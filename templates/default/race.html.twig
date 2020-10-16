@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm mt-4">
+            <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back to main</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm mt-4">
+            {% for result in results %}
+                <h3>{{ result.race.name }}</h3>
+                <ul>
+                {% for item in result.details %}
+                    <li>
+                        <strong>Horse: </strong>{{ item.horse.id }}
+                        <strong>speed: </strong> {{ item.speedCalculated|number_format(2, '.', ',') }}
+                        <strong>endurance: </strong> {{ item.enduranceCalculated|number_format(2, '.', ',') }}
+                        <strong>strength: </strong> {{ item.strengthCalculated|number_format(2, '.', ',') }}
+                        <strong>strength: </strong> {{ item.timeCalculated|number_format(2, '.', ',') }}
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

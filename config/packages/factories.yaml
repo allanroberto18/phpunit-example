@@ -1,0 +1,5 @@
+services:
+  app.factories.horse:
+    class: App\Factories\HorseFactory
+    arguments:
+      - '@app.helpers.generate_horse_stat'

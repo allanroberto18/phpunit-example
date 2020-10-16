@@ -1,0 +1,18 @@
+services:
+  app.repository.horse:
+    class: App\Repository\HorseRepository
+    factory: ['@doctrine.orm.default_entity_manager', getRepository]
+    arguments:
+      - 'App\Entity\Horse'
+
+  app.repository.race:
+    class: App\Repository\RaceRepository
+    factory: ['@doctrine.orm.default_entity_manager', getRepository]
+    arguments:
+      - 'App\Entity\Race'
+
+  app.repository.horse_race_detail:
+    class: App\Repository\HorseRaceDetailRepository
+    factory: ['@doctrine.orm.default_entity_manager', getRepository]
+    arguments:
+      - 'App\Entity\HorseRaceDetail'

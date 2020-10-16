@@ -1,0 +1,25 @@
+imports:
+    - { resource: './packages/helpers.yaml' }
+    - { resource: './packages/factories.yaml' }
+    - { resource: './packages/repositories.yaml' }
+    - { resource: './packages/services.yaml' }
+    - { resource: './packages/controllers.yaml' }
+
+parameters:
+
+services:
+    _defaults:
+        autowire: false      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+#
+#    App\:
+#        resource: '../src/*'
+#        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+#
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+
+
